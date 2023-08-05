@@ -16,10 +16,6 @@ local lspconfig = {
 
 local lspsaga = {
     "nvimdev/lspsaga.nvim",
-    after = {
-        "neovim/nvim-lspconfig",
-        "nvim-treesitter/nvim-treesitter",
-    },
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },

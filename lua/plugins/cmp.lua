@@ -2,11 +2,8 @@ local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
-return {
+local nvim_cmp = {
     "hrsh7th/nvim-cmp",
-    after = {
-        "SirVer/ultisnips"
-    },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
@@ -93,3 +90,16 @@ return {
         }
     end
 }
+
+local snips = {
+    "SirVer/ultisnips",
+    dependencies = {
+        "MissYourSmile/vim-snippets"
+    }
+}
+
+return {
+    snips,
+    nvim_cmp
+}
+
