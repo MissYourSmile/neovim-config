@@ -7,13 +7,13 @@ return {
     config = function()
         local builtin = require("telescope.builtin")
         local keymaps = {
-            { from = "<leader>f" , to = function() builtin.find_files()                 end },
-            { from = "ff"        , to = function() builtin.find_files()                 end },
-            { from = "fb"        , to = function() builtin.buffers()                    end },
-            { from = "fl"        , to = function() builtin.current_buffer_fuzzy_find()  end },
-            { from = "ft"        , to = function() builtin.current_buffer_tags()        end },
-            { from = "fr"        , to = function() builtin.live_grep()                  end },
-            { from = "<leader>;" , to = function() builtin.commands()                   end },
+            { from = "<leader>f",  to = ":Telescope find_files                <CR>" },
+            { from = "ff",         to = ":Telescope lsp_document_symbols      <CR>" },
+            { from = "fb",         to = ":Telescope buffers                   <CR>" },
+            { from = "fl",         to = ":Telescope current_buffer_fuzzy_find <CR>" },
+            { from = "ft",         to = ":Telescope current_buffer_tags       <CR>" },
+            { from = "fr",         to = ":Telescope live_grep                 <CR>" },
+            { from = "<leader>;",  to = ":Telescope commands                  <CR>" },
         }
         for _, items in ipairs(keymaps) do
             vim.keymap.set("n", items.from, items.to, { noremap = true })
