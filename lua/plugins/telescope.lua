@@ -1,6 +1,10 @@
 return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2",
+    event = { "BufReadPre", "BufNewFile" },
+    keys = {
+        "<leader>f"
+    },
     dependencies = {
         'nvim-lua/plenary.nvim'
     },

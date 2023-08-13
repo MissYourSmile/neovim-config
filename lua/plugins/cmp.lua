@@ -4,6 +4,7 @@ local has_words_before = function()
 end
 local nvim_cmp = {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
@@ -13,7 +14,7 @@ local nvim_cmp = {
         "hrsh7th/cmp-calc",
         {
 			"onsails/lspkind.nvim",
-			lazy = false,
+			--lazy = false,
 			config = function()
 				require("lspkind").init()
 			end
@@ -93,6 +94,7 @@ local nvim_cmp = {
 
 local snips = {
     "SirVer/ultisnips",
+    event = "InsertEnter",
     dependencies = {
         "MissYourSmile/vim-snippets"
     }

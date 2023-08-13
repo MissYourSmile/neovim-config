@@ -1,5 +1,6 @@
 local lspconfig = {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
         local lspconfig = require("lspconfig")
         -- language server config
@@ -16,6 +17,7 @@ local lspconfig = {
 
 local lspsaga = {
     "nvimdev/lspsaga.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
