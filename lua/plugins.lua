@@ -23,6 +23,7 @@ require("lazy").setup({
     require("plugins.tree"),
     require("plugins.surround"),
     require("plugins.git"),
+    require("plugins.keywords"),
 }, {
 
 })
