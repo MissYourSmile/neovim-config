@@ -1,7 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "VimEnter" },
     keys = {
         "<leader>f"
     },

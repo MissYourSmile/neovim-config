@@ -24,6 +24,7 @@ require("lazy").setup({
     require("plugins.surround"),
     require("plugins.git"),
     require("plugins.keywords"),
+    require("plugins.startup"),
 }, {
 
 })

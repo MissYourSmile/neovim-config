@@ -1,7 +1,7 @@
 return {
     "Mr-LLLLL/interestingwords.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    config = function ()
+    config = function()
         require("interestingwords").setup {
             colors = { '#aeee00', '#ff0000', '#0000ff', '#b88823', '#ffa724', '#ff2c4b' },
             search_count = true,
