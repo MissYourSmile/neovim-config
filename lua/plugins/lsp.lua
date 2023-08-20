@@ -77,6 +77,10 @@ local lspsaga = {
                 vim.keymap.set('n', '<space>t', function()
                     vim.lsp.buf.format { async = true }
                 end, opts)
+                if ("clangd" == vim.lsp.get_client_by_id(ev.data.client_id).name)
+                then
+                    vim.keymap.set("n", "<leader>h", "<cmd>ClangdSwitchSourceHeader<CR>")
+                end
             end,
         })
     end,
