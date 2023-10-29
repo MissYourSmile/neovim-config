@@ -9,6 +9,7 @@ local lspconfig = {
         require("lsp.shell").setup(lspconfig)
         require("lsp.python").setup(lspconfig)
         require("lsp.json").setup(lspconfig)
+        require("lsp.cmake").setup(lspconfig)
         -- mapping
         vim.keymap.set("n", "g[", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "g]", vim.diagnostic.goto_next)
