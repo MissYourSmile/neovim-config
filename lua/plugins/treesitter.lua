@@ -17,6 +17,7 @@ return {
                 "query",
                 "markdown",
                 "markdown_inline",
+                "cmake",
             },
             highlight = {
                 enable = true,
