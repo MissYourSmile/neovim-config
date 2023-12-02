@@ -18,6 +18,9 @@ return {
                 "markdown",
                 "markdown_inline",
                 "cmake",
+                "html",
+                "css",
+                "javascript",
             },
             highlight = {
                 enable = true,
