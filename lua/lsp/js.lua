@@ -1,5 +1,5 @@
 return {
     setup = function(lspconfig)
-        lspconfig.denols.setup {}
+        lspconfig.tsserver.setup {}
     end
 }
