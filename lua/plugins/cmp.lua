@@ -29,7 +29,6 @@ local nvim_cmp = {
     },
     config = function()
         local cmp = require("cmp")
-        local lspkind = require("lspkind")
         local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
         cmp.setup {
             preselect = cmp.PreselectMode.Item,

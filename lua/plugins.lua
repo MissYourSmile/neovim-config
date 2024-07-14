@@ -19,6 +19,7 @@ require("lazy").setup({
     require("plugins.treesitter"),
     require("plugins.telescope"),
     require("plugins.lsp"),
+    require("plugins.formatter"),
     require("plugins.cmp"),
     require("plugins.tree"),
     require("plugins.surround"),
