@@ -17,6 +17,7 @@ return {
             { from = "fl",         to = function () builtin.current_buffer_fuzzy_find()  end },
             { from = "ft",         to = function () builtin.current_buffer_tags()        end },
             { from = "fr",         to = function () builtin.live_grep()                  end },
+            { from = "fs",         to = function () builtin.grep_string()                end },
             { from = "<leader>;",  to = function () builtin.commands()                   end },
         }
         for _, items in ipairs(keymaps) do
