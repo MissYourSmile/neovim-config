@@ -1,5 +1,7 @@
 return {
     setup = function(lspconfig)
-        lspconfig.ts_ls.setup {}
+        lspconfig.mesonlsp.setup {
+        }
     end
 }
+

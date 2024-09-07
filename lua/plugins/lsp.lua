@@ -13,6 +13,7 @@ local lspconfig = {
         require("lsp.html").setup(lspconfig)
         require("lsp.css").setup(lspconfig)
         require("lsp.js").setup(lspconfig)
+        require("lsp.meson").setup(lspconfig)
         -- mapping
         vim.keymap.set("n", "g[", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "g]", vim.diagnostic.goto_next)
