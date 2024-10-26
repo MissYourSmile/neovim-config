@@ -10,10 +10,11 @@ local guard = {
 
         ft("python"):fmt("black")
 
-        require("guard").setup({
+        vim.g.guard_config = {
             fmt_on_save = false,
             lsp_as_default_formatter = true,
-        })
+            save_on_fmt = false,
+        }
 
         vim.keymap.set({ "n", "v" }, "<space>t", "<cmd>GuardFmt<CR>")
     end
