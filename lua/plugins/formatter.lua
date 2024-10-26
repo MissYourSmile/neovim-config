@@ -16,7 +16,7 @@ local guard = {
             save_on_fmt = false,
         }
 
-        vim.keymap.set({ "n", "v" }, "<space>t", "<cmd>GuardFmt<CR>")
+        vim.keymap.set({ "n", "v" }, "<space>t", "<cmd>Guard fmt<CR>")
     end
 }
 
