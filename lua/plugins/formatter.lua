@@ -9,6 +9,7 @@ local guard = {
         local ft = require("guard.filetype")
 
         ft("python"):fmt("black")
+        ft("rust"):fmt("rustfmt")
 
         vim.g.guard_config = {
             fmt_on_save = false,

@@ -31,7 +31,7 @@ local nvim_cmp = {
         local cmp = require("cmp")
         local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
         cmp.setup {
-            preselect = cmp.PreselectMode.Item,
+            preselect = cmp.PreselectMode.None,
             snippet = {
                 expand = function(args)
                     -- luasnip.lsp_expand(args.body)
@@ -80,7 +80,7 @@ local nvim_cmp = {
                     end,
                 }),
                 ["<S-Tab>"] = cmp.mapping({
-                    i = function(fallback)
+                    i = function(_)
                         if cmp.visible() then
                             cmp.select_prev_item({ })
                         end
