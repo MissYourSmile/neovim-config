@@ -26,6 +26,7 @@ require("lazy").setup({
     require("plugins.git"),
     require("plugins.keywords"),
     require("plugins.startup"),
+    require("plugins.markdown"),
 }, {
 
 })

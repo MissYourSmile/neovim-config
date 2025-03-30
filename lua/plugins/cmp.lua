@@ -1,6 +1,6 @@
 local has_words_before = function()
-	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 local nvim_cmp = {
     "hrsh7th/nvim-cmp",
@@ -13,34 +13,27 @@ local nvim_cmp = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-calc",
         {
-			"onsails/lspkind.nvim",
-			--lazy = false,
-			config = function()
-				require("lspkind").init()
-			end
-		},
-		{
-			"quangnguyen30192/cmp-nvim-ultisnips",
-			config = function()
-				-- optional call to setup (see customization section)
-				require("cmp_nvim_ultisnips").setup {}
-			end,
-		}
+            "onsails/lspkind.nvim",
+            --lazy = false,
+            config = function()
+                require("lspkind").init()
+            end
+        },
+        "saadparwaiz1/cmp_luasnip",
     },
     config = function()
         local cmp = require("cmp")
-        local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+        local luasnip = require("luasnip")
         cmp.setup {
             preselect = cmp.PreselectMode.None,
             snippet = {
                 expand = function(args)
-                    -- luasnip.lsp_expand(args.body)
-                    vim.fn["UltiSnips#Anon"](args.body)
+                    luasnip.lsp_expand(args.body)
                 end,
             },
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-                { name = 'ultisnips' },
+                { name = 'luasnip' },
             }, {
                 { name = 'buffer' },
                 { name = 'path' },
@@ -48,16 +41,16 @@ local nvim_cmp = {
             }),
             mapping = {
                 ["<c-n>"] = cmp.mapping(
-                    function(fallback)
-                        cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+                    function(_)
+                        luasnip.jump(1)
                     end,
-                    { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+                    { "i", "s", }
                 ),
                 ["<c-p>"] = cmp.mapping(
-                    function(fallback)
-                        cmp_ultisnips_mappings.jump_backwards(fallback)
+                    function(_)
+                        luasnip.jump(-1)
                     end,
-                    { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+                    { "i", "s", }
                 ),
                 ['<CR>'] = cmp.mapping({
                     i = function(fallback)
@@ -71,7 +64,7 @@ local nvim_cmp = {
                 ["<Tab>"] = cmp.mapping({
                     i = function(fallback)
                         if cmp.visible() then
-                            cmp.select_next_item({ })
+                            cmp.select_next_item({})
                         elseif has_words_before() then
                             cmp.complete()
                         else
@@ -82,7 +75,7 @@ local nvim_cmp = {
                 ["<S-Tab>"] = cmp.mapping({
                     i = function(_)
                         if cmp.visible() then
-                            cmp.select_prev_item({ })
+                            cmp.select_prev_item({})
                         end
                     end,
                 }),
@@ -92,15 +85,19 @@ local nvim_cmp = {
 }
 
 local snips = {
-    "SirVer/ultisnips",
+    "L3MON4D3/LuaSnip",
+    tag = "v2.3.0",
+    build = "make install_jsregexp",
     event = "InsertEnter",
     dependencies = {
-        "MissYourSmile/vim-snippets"
-    }
+        "rafamadriz/friendly-snippets"
+    },
+    config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+    end
 }
 
 return {
     snips,
     nvim_cmp
 }
-
