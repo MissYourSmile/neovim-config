@@ -27,6 +27,7 @@ require("lazy").setup({
     require("plugins.keywords"),
     require("plugins.startup"),
     require("plugins.markdown"),
+    require("plugins.codecompanion"),
 }, {
 
 })
