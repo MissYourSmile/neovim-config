@@ -11,6 +11,7 @@ local preview = {
     end,
     ft = {
         "markdown",
+        "codecompanion"
     },
     config = function()
         vim.g.mkdp_port = '8080'
@@ -19,6 +20,24 @@ local preview = {
     end
 }
 
+local render = {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter"
+    },
+    ft = {
+        "markdown",
+        "codecompanion"
+    },
+    opts = {},
+    config = function()
+        require('render-markdown').setup({
+            completions = { lsp = { enabled = true } },
+        })
+    end
+}
+
 return {
     preview,
+    render,
 }
