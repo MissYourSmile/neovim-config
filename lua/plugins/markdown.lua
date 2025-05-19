@@ -33,6 +33,13 @@ local render = {
     config = function()
         require('render-markdown').setup({
             completions = { lsp = { enabled = true } },
+            heading = {
+                backgrounds = {},
+            },
+            code = {
+                width = "block",
+                right_pad = 1,
+            },
         })
     end
 }
