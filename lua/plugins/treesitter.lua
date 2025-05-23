@@ -26,6 +26,7 @@ return {
                 "css",
                 "javascript",
                 "rust",
+                "yaml",
             },
             highlight = {
                 enable = true,
