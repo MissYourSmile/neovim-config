@@ -10,7 +10,7 @@ return {
     config = function()
         local builtin = require("telescope.builtin")
         local keymaps = {
-            { from = "<leader>f",  to = function () builtin.find_files()                 end },
+            { from = "<leader>f",  to = function () builtin.find_files({follow=true,})   end },
             { from = "ff",         to = function () builtin.lsp_document_symbols()       end },
             { from = "fb",         to = function () builtin.buffers()                    end },
             { from = "fl",         to = function () builtin.current_buffer_fuzzy_find()  end },
