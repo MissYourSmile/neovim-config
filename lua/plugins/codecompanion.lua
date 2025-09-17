@@ -7,20 +7,22 @@ return {
     config = function()
         require("codecompanion").setup({
             adapters = {
-                deepseek = function()
-                    return require("codecompanion.adapters").extend("deepseek", {
-                        env = {
-                            api_key = function()
-                                return os.getenv("DEEPSEEK_API_KEY")
-                            end,
-                        },
-                        schema = {
-                            model = {
-                                default = "deepseek-chat",
+                http = {
+                    deepseek = function()
+                        return require("codecompanion.adapters").extend("deepseek", {
+                            env = {
+                                api_key = function()
+                                    return os.getenv("DEEPSEEK_API_KEY")
+                                end,
                             },
-                        },
-                    })
-                end,
+                            schema = {
+                                model = {
+                                    default = "deepseek-reasoner",
+                                },
+                            },
+                        })
+                    end,
+                }
             },
             strategies = {
                 chat = { adapter = "deepseek", },
