@@ -1,9 +1,10 @@
 return {
-    setup = function(lspconfig)
+    setup = function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities.textDocument.completion.completionItem.snippetSupport = true
-        lspconfig.html.setup {
+        vim.lsp.config("html", {
             capabilities = capabilities,
-        }
+        })
+		vim.lsp.enable("html")
     end
 }

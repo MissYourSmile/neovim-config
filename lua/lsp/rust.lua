@@ -1,6 +1,6 @@
 return {
-    setup = function(lspconfig)
-        lspconfig.rust_analyzer.setup {
+    setup = function()
+        vim.lsp.config("rust_analyzer", {
             settings = {
                 ["rust-analyzer"] = {
                     completion = {
@@ -10,6 +10,7 @@ return {
                     }
                 }
             }
-        }
+        })
+        vim.lsp.enable("rust_analyzer")
     end
 }

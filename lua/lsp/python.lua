@@ -1,5 +1,6 @@
 return {
-    setup = function (lspconfig)
-        lspconfig.pyright.setup{}
+    setup = function()
+        vim.lsp.config("pyright", {})
+        vim.lsp.enable("pyright")
     end
 }

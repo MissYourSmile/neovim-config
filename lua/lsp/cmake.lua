@@ -1,6 +1,6 @@
 return {
-    setup = function(lspconfig)
-        lspconfig.cmake.setup {
-        }
+    setup = function()
+        vim.lsp.config("cmake", {})
+        vim.lsp.enable("cmake")
     end
 }

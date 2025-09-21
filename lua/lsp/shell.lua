@@ -1,5 +1,6 @@
 return {
-    setup = function (lspconfig)
-        lspconfig.bashls.setup{}
+    setup = function()
+        vim.lsp.config("bashls", {})
+        vim.lsp.enable("bashls")
     end
 }

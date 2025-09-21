@@ -1,5 +1,6 @@
 return {
-    setup = function(lspconfig)
-        lspconfig.marksman.setup {}
+    setup = function()
+        vim.lsp.config("marksman", {})
+        vim.lsp.enable("marksman")
     end
 }

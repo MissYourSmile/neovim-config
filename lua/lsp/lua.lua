@@ -1,6 +1,6 @@
 return {
-    setup = function(lspconfig)
-        lspconfig.lua_ls.setup {
+    setup = function()
+        vim.lsp.config("lua_ls", {
             settings = {
                 Lua = {
                     runtime = {
@@ -17,6 +17,7 @@ return {
                     },
                 },
             },
-        }
+        })
+        vim.lsp.enable("lua_ls")
     end
 }

@@ -1,7 +1,7 @@
 return {
-    setup = function(lspconfig)
-        lspconfig.mesonlsp.setup {
-        }
+    setup = function()
+        vim.lsp.config("mesonlsp", {})
+		vim.lsp.enable("mesonlsp")
     end
 }
 

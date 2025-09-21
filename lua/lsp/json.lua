@@ -1,6 +1,6 @@
 return {
-    setup = function (lspconfig)
-        lspconfig.jsonls.setup{}
+    setup = function()
+        vim.lsp.config("jsonls", {})
+        vim.lsp.enable("jsonls")
     end
 }
-
