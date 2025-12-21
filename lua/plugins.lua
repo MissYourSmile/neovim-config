@@ -21,6 +21,7 @@ require("lazy").setup({
     require("plugins.telescope"),
     require("plugins.lsp"),
     require("plugins.formatter"),
+    require("plugins.copilot"),
     require("plugins.cmp"),
     require("plugins.tree"),
     require("plugins.surround"),
@@ -28,7 +29,6 @@ require("lazy").setup({
     require("plugins.keywords"),
     require("plugins.startup"),
     require("plugins.markdown"),
-    require("plugins.codecompanion"),
 }, {
 
 })

@@ -20,6 +20,12 @@ local nvim_cmp = {
             end
         },
         "saadparwaiz1/cmp_luasnip",
+        {
+            "zbirenbaum/copilot-cmp",
+            config = function()
+                require("copilot_cmp").setup()
+            end
+        },
     },
     config = function()
         local cmp = require("cmp")
@@ -32,6 +38,7 @@ local nvim_cmp = {
                 end,
             },
             sources = cmp.config.sources({
+                { name = 'copilot' },
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
             }, {
