@@ -6,16 +6,20 @@ local guard = {
         "nvimdev/guard-collection",
     },
     config = function()
-        local ft = require("guard.filetype")
-
-        ft("python"):fmt("black")
-        ft("rust"):fmt("rustfmt")
-
         vim.g.guard_config = {
             fmt_on_save = false,
             lsp_as_default_formatter = true,
             save_on_fmt = false,
         }
+
+        local ft = require("guard.filetype")
+
+        if vim.fn.executable("black") == 1 then
+            ft("python"):fmt("black")
+        end
+        if vim.fn.executable("rustfmt") == 1 then
+            ft("rust"):fmt("rustfmt")
+        end
 
         vim.keymap.set({ "n", "v" }, "<space>t", "<cmd>Guard fmt<CR>")
     end
