@@ -14,8 +14,12 @@ local guard = {
 
         local ft = require("guard.filetype")
 
-        ft("python"):fmt("black")
-        ft("rust"):fmt("rustfmt")
+        if vim.fn.executable("black") == 1 then
+            ft("python"):fmt("black")
+        end
+        if vim.fn.executable("rustfmt") == 1 then
+            ft("rust"):fmt("rustfmt")
+        end
 
         vim.keymap.set({ "n", "v" }, "<space>t", "<cmd>Guard fmt<CR>")
     end
