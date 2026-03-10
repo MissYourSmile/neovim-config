@@ -41,9 +41,9 @@ local nvim_cmp = {
                 { name = 'copilot' },
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
+                { name = 'path' },
             }, {
                 { name = 'buffer' },
-                { name = 'path' },
                 { name = 'calc' },
             }),
             mapping = {
