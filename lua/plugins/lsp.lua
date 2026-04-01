@@ -16,8 +16,12 @@ local lspconfig = {
         require("lsp.rust").setup()
         require("lsp.markdown").setup()
         -- mapping
-        vim.keymap.set("n", "g[", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "g]", vim.diagnostic.goto_next)
+        vim.keymap.set("n", "g[", function()
+            vim.diagnostic.jump({ count = -1 })
+        end)
+        vim.keymap.set("n", "g]", function()
+            vim.diagnostic.jump({ count = 1 })
+        end)
     end
 }
 
